@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+	android:id="@+id/widget44"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+	android:id="@+id/activity"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_x="11dp"
+	android:layout_y="21dp" />
+<TextView
+	android:id="@+id/res"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textSize="12sp"
+	android:layout_x="19dp"
+	android:layout_y="57dp" />
+<TextView
+	android:id="@+id/day"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textSize="12sp"
+	android:layout_x="191dp"
+	android:layout_y="58dp" />
+<TextView
+	android:id="@+id/time"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textSize="12sp"
+	android:layout_x="253dp"
+	android:layout_y="59dp" />
+<TextView
+	android:id="@+id/bookable"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_x="254dp"
+	android:layout_y="29dp" />
+<TextView
+	android:id="@+id/local"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textSize="12sp"
+	android:layout_x="89dp"
+	android:layout_y="57dp" />
+<TextView
+	android:id="@+id/score"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_x="150dp"
+	android:layout_y="24dp" />
+</AbsoluteLayout>

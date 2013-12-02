@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="list_item_checked">#CCCCCC</color>
+    <color name="background_blue">#0099CC</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="menu_item_focused">#FFBB33</color>
+    <color name="menu_item_pressed">#FFD199</color>
+
+</resources>
