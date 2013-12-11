@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -72,7 +73,7 @@ public class MainActivity extends ListActivity  {
                   protected void onCreate(Bundle savedInstanceState) {
                   	 super.onCreate(savedInstanceState);
                      Log.d(requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)+"","");
-                     setContentView(R.layout.list_example);
+                     setContentView(R.layout.activitylist_layout);
                      getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
                              R.layout.header);
                      AsyncJSON obj= new AsyncJSON();
@@ -91,14 +92,14 @@ public class MainActivity extends ListActivity  {
                      content = (TextView)findViewById(R.id.output);
 
                      // the desired columns to be bound
-					   String[] from = new String[] { TAG_TIME, TAG_DAY , TAG_ACTIVITY,TAG_BOOKABLE, TAG_LOCAL, TAG_RES, TAG_SCORE  };
+					   String[] from = new String[] { TAG_TIME, TAG_DAY , TAG_ACTIVITY,TAG_BOOKABLE };
 
                      // the XML defined views which the data will be bound to
-                     int[] to = new int[] { R.id.time, R.id.day, R.id.activity ,R.id.bookable ,R.id.local,R.id.res,R.id.score, };
+                     int[] to = new int[] { R.id.textViewTime, R.id.textViewDay, R.id.textViewClass ,R.id.textViewFree };
           
                      // create the adapter using the cursor pointing to the desired data as well as the layout information
                      //JSONArrayAdapter mAdapter = new JSONArrayAdapter(this, R.layout.passlist, new JSONArray[] {c} , from, to);
-                     JSONArrayAdapter mAdapter = new JSONArrayAdapter(this, c , R.layout.passlist , from , to);  
+                     JSONArrayAdapter mAdapter = new JSONArrayAdapter(this, c , R.layout.item2 , from , to);  
                      // set this adapter as your ListActivity's adapter
                      setListAdapter(mAdapter);
              		
@@ -117,7 +118,6 @@ public class MainActivity extends ListActivity  {
                          
                          // ListView Clicked item value
                          JSONObject namestring = (JSONObject) l.getItemAtPosition(position);
-                         
                          String itemValue = null;
 						try {
 							itemValue = (String) namestring.getString(TAG_ACTIVITY);
@@ -128,6 +128,12 @@ public class MainActivity extends ListActivity  {
                          
                             
                          content.setText("Click : \n  Position :"+itemPosition+"  \n  ListItem : " +itemValue);
+                         Intent intent = new Intent(this, PassInfo.class);
+                         String message = namestring.toString();
+                         intent.putExtra("json", message);
+                         startActivity(intent);
+                         
+
                          
                 }
                 

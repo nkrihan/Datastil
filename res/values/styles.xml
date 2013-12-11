@@ -27,4 +27,11 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
     </style>
 
+    <style name="CustomProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/custom_progress</item>
+
+    </style>
+
+ 
 </resources>

@@ -9,8 +9,11 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -107,7 +110,12 @@ public class JSONArrayAdapter extends BaseAdapter implements Filterable {
                                 item = new HashMap<String, String>();        
                                 for (int j = 0; j < fields.length; j++) {
                                         String fname = fields[j];
-                                        item.put(fname, optString(o, fname));        
+                                        if ("day".equals(fname)){
+                                        	item.put(fname, checkDay(Integer.parseInt(optString(o, fname))));
+                                        }
+                                        else{
+                                        item.put(fname, optString(o, fname));
+                                        }
                                 }
                                 listData.add(item);
                         }        
@@ -115,6 +123,22 @@ public class JSONArrayAdapter extends BaseAdapter implements Filterable {
                 return listData;
                 
         }
+
+		public static String checkDay(Integer number)  
+        {  
+            SparseArray<String> mp=new SparseArray<String>();
+              
+            
+            mp.put(1,"Mon");  
+            mp.put(2,"Tue");  
+            mp.put(3,"Wed");  
+            mp.put(4,"Thu");  
+            mp.put(5,"Fri");  
+            mp.put(6, "Sat");
+            mp.put(7,"Sun");  
+              
+            return mp.get(number).toString();  
+        }  
         
         private String optString(JSONObject o, String key) {
                 //iterate over child json keys if we need to

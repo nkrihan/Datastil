@@ -12,5 +12,7 @@
     <ListView
         android:id="@android:id/android:list"
         android:layout_width="fill_parent"
+        
+        android:dividerHeight="0dip"
         android:layout_height="wrap_content" />
 </LinearLayout>

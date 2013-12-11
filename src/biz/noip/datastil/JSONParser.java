@@ -14,6 +14,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
  
 import android.util.Log;
@@ -21,7 +22,7 @@ import android.util.Log;
 public class JSONParser {
  
     static InputStream is = null;
-    static JSONArray jObj = null;
+    static JSONArray jObj = new JSONArray();
     static String json = "";
  
     // constructor
