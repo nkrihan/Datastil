@@ -135,7 +135,7 @@ public class JSONArrayAdapter extends BaseAdapter implements Filterable {
             mp.put(4,"Thu");  
             mp.put(5,"Fri");  
             mp.put(6, "Sat");
-            mp.put(7,"Sun");  
+            mp.put(0,"Sun");  
               
             return mp.get(number).toString();  
         }  

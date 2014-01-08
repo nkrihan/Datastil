@@ -98,6 +98,8 @@ public class PassInfo extends Activity{
                     	   public String formatLabel(double value, boolean isValueX) {
                     	      if (isValueX) {
                     	    	  Date d = new Date((long) value);
+                    	    	  Log.e("date value", Double.toString(value));
+                    	    	  Log.e("date", d.toString());
                                   return dateFormat.format(d);
                     	         }
                     	      
@@ -134,7 +136,8 @@ public class PassInfo extends Activity{
                          for(int i=0 ; i< num ;i++){
                         	 try {
                         		JSONObject object = json.getJSONObject(i);
-								data[i] = new GraphViewData( object.getInt(TAG_TIME) , object.getInt(TAG_BOOKABLE) );
+                        		Log.e("Date from JSON", Long.toString(object.getLong(TAG_BOOKABLE)));
+								data[i] = new GraphViewData( object.getLong(TAG_TIME) , object.getInt(TAG_BOOKABLE) );
 							} catch (JSONException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
